@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Homepage</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+.header {
+    background-color: #f2711b;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f2711b;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color:  #f2711b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  #f2711b;
+}
+
+.transactions {
+    margin-top: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color:  #f2711b;
+    color: white;
+}
+
+    </style>
+
+    <script>
+        // scripts.js
+
+/* function applyLoan() {
+    const loanType = document.getElementById('loan-type').value;
+    alert(`Loan application for ${loanType} submitted!`);
+}  
+*/
+function createAccount() {
+    alert('Account creation process initiated!');
+}
+
+function sendMoney() {
+    const recipient = document.getElementById('recipient').value;
+    const amount = document.getElementById('amount').value;
+    if (recipient && amount > 0) {
+        alert(`enter passkey for transaction`);
+    } else {
+        alert('Please enter valid recipient and amount.');
+    }
+}
+
+function viewTransactions() {
+    const transactionsDiv = document.getElementById('transactions');
+    transactionsDiv.innerHTML = `
+        <ul>
+            <li>Sent $200 to Alice on 2024-12-10</li>
+            <li>Received $500 from Bob on 2024-12-12</li>
+            <li>Paid $300 for rent on 2024-12-15</li>
+        </ul>
+    `;
+    transactionsDiv.style.display = 'block';
+}
+
+function viewBalance() {
+    const balanceDisplay = document.getElementById('balance-display');
+    balanceDisplay.textContent = 'Your current balance is $1,200.';
+}
+
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div><img src="https://cdn.freebiesupply.com/logos/large/2x/bankey-01-logo-png-transparent.png" height="150"></div>
+        <h1>Welcome to Secure Bank</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#loans-section">Apply for Loans</a></li>
+                <li><a href="#create-account-section">Create Account</a></li>
+                <li><a href="#send-money-section">Send Money</a></li>
+                <li><a href="#transaction-history-section">Transaction History</a></li>
+                <li><a href="#balance-section">View Balance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Loans Section -->
+        <section id="loans-section" class="section">
+            <h2>Apply for a Loan</h2>
+            <p>Select the type of loan and submit your application:</p>
+            <select id="loan-type">
+                <option value="personal">Personal Loan</option>
+                <option value="home">Home Loan</option>
+                <option value="auto">Auto Loan</option>
+                <option value="education">Education Loan</option>
+            </select>
+            <button onclick="applyLoan()"><a href="/run-tkinter/" target="_blank">Apply</a></button>
+        </section>
+
+        <!-- Create Account Section -->
+        <section id="create-account-section" class="section">
+            <h2>Create a New Account</h2>
+            <button onclick="createAccount()">Create Account</button>
+        </section>
+
+        <!-- Send Money Section -->
+        <section id="send-money-section" class="section">
+            <h2>Send Money</h2>
+            <label for="recipient">Recipient:</label>
+            <input type="text" id="recipient" placeholder="Enter recipient name">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <button onclick="sendMoney()"><a href="/run-tkinter/" target="_blank">Send</a></button>
+        </section>
+
+        <!-- Transaction History Section -->
+        <section id="transaction-history-section" class="section">
+            <h2>Transaction History</h2>
+            <button onclick="viewTransactions()"><a href="/run-tkinter/" target="_blank">View Transactions</a></button>
+            <div id="transactions" class="transactions"></div>
+        </section>
+
+        <!-- View Balance Section -->
+        <section id="balance-section" class="section">
+            <h2>View Balance</h2>
+            <button onclick="viewBalance()"><a href="/run-tkinter/" target="_blank">Check Balance</a></button>
+            <p id="balance-display"></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Secure Bank. All Rights Reserved.</p>
+    </footer>
+
+    <script src="home_scripts.js"></script>
+</body>
+</html>
